@@ -11,7 +11,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "GoPay",
+  title: "Alentra",
   description: "Web3 Finance Infrastructure",
 };
 

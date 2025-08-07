@@ -1,14 +1,13 @@
 import {
-    morphHolesky
+    hederaTestnet
 } from "./evm-chains-mainnet";
 
 // Export the native address constant
 export const NATIVE_ADDRESS = '0x0000000000000000000000000000000000000000';
-  
 
+// Example contract address for Hedera Testnet (replace with your actual contract address if you have one)
 export const contractMainnetAddresses = {
-
-    [morphHolesky.id]: '0x5BbE08Df588207eDC29042EE62EE14142A81741B',
+    [hederaTestnet.id]: '0x0000000000000000000000000000000000000000', // Placeholder, as no contract address is provided in the sources
 };
 
 // Token interface with optional priceFeed field
@@ -20,38 +19,13 @@ export interface Token {
 }
 
 export const tokensPerMainnetChain: { [chainId: number]: Token[] } = {
-     [morphHolesky.id]: [
+    [hederaTestnet.id]: [
         {
-    symbol: 'ETH',
-    address: '0x0000000000000000000000000000000000000000', // Native ETH
-    decimals: 18,
-    priceFeed: ''
-},
-{
-    symbol: 'USDT',
-    address: '0x9E12AD42c4E4d2acFBADE01a96446e48e6764B98',
-    decimals: 6,
-    priceFeed: ''
-},
-{
-    symbol: 'USDC',
-    address: '0xeA2610c28B4c5857689EAFa8b2116a617206d283',
-    decimals: 6,
-    priceFeed: ''
-},
-{
-    symbol: 'DAI',
-    address: '0xAa19d46626947C6E1E5F281aE835971579827DDC',
-    decimals: 18,
-    priceFeed: ''
-},
-{
-    symbol: 'WETH',
-    address: '0x5300000000000000000000000000000000000011',
-    decimals: 18,
-    priceFeed: ''
-}
-
+            symbol: 'HBAR',
+            address: '0x0000000000000000000000000000000000000000', // Native HBAR
+            decimals: 18, // MetaMask requires 18 decimals, even though HBAR has 8
+            priceFeed: ''
+        }
+        // No other token addresses are available in the knowledge sources
     ]
-
 };

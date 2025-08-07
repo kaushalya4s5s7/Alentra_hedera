@@ -1,6 +1,7 @@
 // app/page.tsx or pages/index.tsx (depending on your project structure)
 
 import React from 'react';
+import { useState, useEffect } from 'react';
 import useFullPageLoader from '@/hooks/usePageLoader';
 import Loader from '@/components/ui/loader';
 
@@ -21,6 +22,7 @@ import Features from '@/components/home/Features';
 import GlobalPayrollFeatureCarousel from '@/components/home/FeatureDemo';
 
 function LandingPage() {
+    
   return (
     <main className="min-h-screen bg-white">
       <Navbar />

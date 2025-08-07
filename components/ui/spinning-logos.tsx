@@ -64,7 +64,7 @@ export const SpinningLogos: React.FC = () => {
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="bg-black/80 backdrop-blur-sm rounded-full w-24 h-24 flex items-center justify-center shadow-inner border-2 border-cyan-400/50">
             <span className="text-sm font-bold text-cyan-400 text-center">
-              GoPay
+              Alentra
             </span>
           </div>
         </div>

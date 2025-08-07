@@ -156,7 +156,7 @@ export default function Workflow() {
           }}
         >
           <h2 className="text-5xl lg:text-6xl font-bold text-white mb-6">
-            How <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600">GoPay</span> Works
+            How <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600">Alentra</span> Works
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             From setup to payout in 4 simple steps. Our platform handles the complexity,
@@ -388,7 +388,7 @@ export default function Workflow() {
               Ready to streamline your payroll process?
             </h3>
             <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-              Join thousands of companies who've automated their global payroll with GoPay.
+              Join thousands of companies who've automated their global payroll with Alentra.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <button className="bg-gradient-to-r from-purple-500 to-purple-600 text-white px-10 py-4 rounded-xl font-semibold hover:from-purple-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-purple-500/25">

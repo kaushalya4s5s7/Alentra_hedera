@@ -50,7 +50,7 @@ export default function UseCases() {
           <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6">Built for Every Business Model</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Whether you're managing remote teams, paying freelancers, or running enterprise operations,
-            GoPay adapts to your unique needs.
+            Alentra adapts to your unique needs.
           </p>
         </div>
 

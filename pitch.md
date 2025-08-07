@@ -1,6 +1,6 @@
-# 🌍 GoPay
+# 🌍 Alentra
 
-**GoPay** – The Next-Generation Decentralized Payroll Protocol  
+**Alentra** – The Next-Generation Decentralized Payroll Protocol  
 Streamlining crypto payroll management with intelligent automation and multi-chain support
 
 ---
@@ -18,7 +18,7 @@ Bulk payments, regulatory compliance, and cross-chain interoperability remain ma
 
 ---
 
-## 💡 The GoPay Revolution
+## 💡 The Alentra Revolution
 
 ### ✅ Abstraction with Automation  
 Smart contract-powered bulk payments with intuitive dashboard interfaces that eliminate Web3 complexity for HR teams
@@ -34,7 +34,7 @@ Native integration with Lisk Sepolia and extensible architecture for seamless cr
 
 ---
 
-## ⚙️ GoPay Solves It With
+## ⚙️ Alentra Solves It With
 
 | Feature | Solution |
 |--------|----------|
@@ -88,7 +88,7 @@ Bulk payment smart contracts execute secure, simultaneous transfers to all emplo
 | **Traditional Payroll** | Fiat-only, slow settlements, high fees | ❌ |
 | **Manual Crypto Payroll** | Single transactions, no automation, high gas costs | ❌ |
 | **Basic Web3 Tools** | Limited chains, no USD conversion, poor UX | ❌ |
-| **GoPay** | Multi-chain, automated USD conversion, bulk payments, enterprise UX | ✔️ |
+| **Alentra** | Multi-chain, automated USD conversion, bulk payments, enterprise UX | ✔️ |
 
 ---
 

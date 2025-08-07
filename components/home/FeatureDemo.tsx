@@ -55,7 +55,7 @@ const GlobalPayrollFeatureCarousel = () => {
       {/* Main heading outside the carousel */}
       <div className="text-center mb-8 mt-7 py-4">
         <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
-          How GoPay Works?
+          How Alentra Works?
         </h2>
         <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
           From onboarding to payout, manage your international team in one seamless, compliant platform.

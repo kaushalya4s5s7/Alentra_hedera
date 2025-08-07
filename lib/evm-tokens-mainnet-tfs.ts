@@ -1,16 +1,19 @@
 import {
-    morphHolesky
-} from "./evm-chains-mainnet";
+    hederaTestnet
+} from "./evm-chains-mainnet"; // Make sure this file exports hederaTestnet
 
 // Export the native address constant
 export const NATIVE_ADDRESS = '0x0000000000000000000000000000000000000000';
 
-// add     [morphHolesky.id]:'0x5BbE08Df588207eDC29042EE62EE14142A81741B',
-
+// Add the contract address for Hedera Testnet (replace with your actual contract address if available)
 export const contractMainnetAddresses = {
-    [morphHolesky.id]: '0x5BbE08Df588207eDC29042EE62EE14142A81741B',
-    
+    [hederaTestnet.id]: '0x6132B4447D01CD79B5a9D65d7A37Aabcfc8EFC1d', // Replace with your deployed contract address
 };
+
+export const SecurecontractMainnetAddresses = {
+    [hederaTestnet.id]: '0xe7F03Fd0a14c38831dEcA1DE68D7C5D057083bE1', // Replace with your deployed contract address
+};
+
 
 // Token interface with optional priceFeed field
 export interface Token {
@@ -21,37 +24,37 @@ export interface Token {
 }
 
 export const tokensPerMainnetChain: { [chainId: number]: Token[] } = {
-    [morphHolesky.id]: [
+    [hederaTestnet.id]: [
         {
-    symbol: 'ETH',
-    address: '0x0000000000000000000000000000000000000000', // Native ETH
-    decimals: 18,
-    priceFeed: ''
-},
-{
-    symbol: 'USDT',
-    address: '0x9E12AD42c4E4d2acFBADE01a96446e48e6764B98',
-    decimals: 6,
-    priceFeed: ''
-},
-{
-    symbol: 'USDC',
-    address: '0xeA2610c28B4c5857689EAFa8b2116a617206d283',
-    decimals: 6,
-    priceFeed: ''
-},
-{
-    symbol: 'DAI',
-    address: '0xAa19d46626947C6E1E5F281aE835971579827DDC',
-    decimals: 18,
-    priceFeed: ''
-},
-{
-    symbol: 'WETH',
-    address: '0x5300000000000000000000000000000000000011',
-    decimals: 18,
-    priceFeed: ''
-}
-
+            symbol: 'HBAR',
+            address: '0x0000000000000000000000000000000000000000', // Native HBAR
+            decimals: 18,
+            priceFeed: ''
+        },
+        // Add your testnet token addresses below, or use placeholder addresses
+        {
+            symbol: 'USDT',
+            address: '0xYourTestnetUSDTAddress',
+            decimals: 6,
+            priceFeed: ''
+        },
+        {
+            symbol: 'USDC',
+            address: '0xYourTestnetUSDCAddress',
+            decimals: 6,
+            priceFeed: ''
+        },
+        {
+            symbol: 'DAI',
+            address: '0xYourTestnetDAIAddress',
+            decimals: 18,
+            priceFeed: ''
+        },
+        {
+            symbol: 'WETH',
+            address: '0xYourTestnetWETHAddress',
+            decimals: 18,
+            priceFeed: ''
+        }
     ]
 };

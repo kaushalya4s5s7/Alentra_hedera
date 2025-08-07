@@ -19,7 +19,7 @@ interface TokenSelectorProps {
     onExchangeRateChange: (rate: number) => void;
 }
 
-const Morph_CHAIN_ID = 2810;
+const Hedera_CHAIN_ID = 296;
 
 const TokenSelector = ({
     tokens,
@@ -36,10 +36,10 @@ const TokenSelector = ({
     const [fallbackBalance, setFallbackBalance] = useState<string | null>(null);
     const [fallbackError, setFallbackError] = useState<Error | null>(null);
 
-    // Check if we're on Morph chain
-    const isMorphChain = chainId === Morph_CHAIN_ID;
+    // Check if we're on Hedera chain
+    const isHederaChain = chainId === Hedera_CHAIN_ID;
 
-    // Only enable wagmi hook if NOT on Morph chain
+    // Only enable wagmi hook if NOT on Hedera chain
     const {
         data: balance,
         isLoading: isBalanceLoading,
@@ -52,8 +52,8 @@ const TokenSelector = ({
             : (selectedToken?.address as `0x${string}`),
         chainId: chainId,
         query: {
-            // Disable the hook for Morph chain
-            enabled: isConnected && !!selectedToken && !!address && !isMorphChain,
+            // Disable the hook for Hedera chain
+            enabled: isConnected && !!selectedToken && !!address && !isHederaChain,
             retry: 3,
             retryDelay: 1000
         }
@@ -91,9 +91,9 @@ const TokenSelector = ({
             ? parseFloat(fallbackBalance).toFixed(4)
             : '0';
 
-    // For Morph chain, fetch directly with ethers whenever relevant dependencies change
+    // For Hedera chain, fetch directly with ethers whenever relevant dependencies change
     useEffect(() => {
-        if (isMorphChain && isConnected && address && selectedToken && !fallbackBalance && !isFallbackLoading) {
+        if (isHederaChain && isConnected && address && selectedToken && !fallbackBalance && !isFallbackLoading) {
             setIsFallbackLoading(true);
             setFallbackError(null);
 
@@ -103,17 +103,17 @@ const TokenSelector = ({
                 })
                 .catch(err => {
                     setFallbackError(err as Error);
-                    console.error("Error fetching Morph chain balance:", err);
+                    console.error("Error fetching Hedera chain balance:", err);
                 })
                 .finally(() => {
                     setIsFallbackLoading(false);
                 });
         }
-    }, [isMorphChain, isConnected, address, selectedToken, fetchBalanceWithEthers, fallbackBalance, isFallbackLoading]);
+    }, [isHederaChain, isConnected, address, selectedToken, fetchBalanceWithEthers, fallbackBalance, isFallbackLoading]);
 
-    // Effect for non-Morph chains when wagmi hook fails
+    // Effect for non-Hedera chains when wagmi hook fails
     useEffect(() => {
-        if (!isMorphChain && balanceError && !fallbackBalance && !isFallbackLoading) {
+        if (!isHederaChain && balanceError && !fallbackBalance && !isFallbackLoading) {
             setIsFallbackLoading(true);
             setFallbackError(null);
 
@@ -128,7 +128,7 @@ const TokenSelector = ({
                     setIsFallbackLoading(false);
                 });
         }
-    }, [isMorphChain, balanceError, fetchBalanceWithEthers, fallbackBalance, isFallbackLoading]);
+    }, [isHederaChain, balanceError, fetchBalanceWithEthers, fallbackBalance, isFallbackLoading]);
 
     // Reset fallback data when token changes
     useEffect(() => {
@@ -164,8 +164,8 @@ const TokenSelector = ({
         setFallbackBalance(null);
         setFallbackError(null);
 
-        if (isMorphChain) {
-            // For Morph, directly trigger ethers fetch by resetting state
+        if (isHederaChain) {
+            // For Hedera, directly trigger ethers fetch by resetting state
             setIsFallbackLoading(true);
             fetchBalanceWithEthers()
                 .then(result => {
@@ -183,18 +183,18 @@ const TokenSelector = ({
         }
     };
 
-    // Effect to fetch balance when token/chain changes (for non-Morph chains)
+    // Effect to fetch balance when token/chain changes (for non-Hedera chains)
     useEffect(() => {
-        if (isConnected && selectedToken && address && !isMorphChain) {
+        if (isConnected && selectedToken && address && !isHederaChain) {
             refetchBalance();
         }
-    }, [selectedToken?.address, refetchBalance, isConnected, address, isMorphChain]);
+    }, [selectedToken?.address, refetchBalance, isConnected, address, isHederaChain]);
 
     // Determine loading state based on active fetch method
-    const isAnyBalanceLoading = (isMorphChain ? isFallbackLoading : (isBalanceLoading || isFallbackLoading));
+    const isAnyBalanceLoading = (isHederaChain ? isFallbackLoading : (isBalanceLoading || isFallbackLoading));
 
-    // Error state - for Morph we only check fallback error, for others we check both
-    const hasRealBalanceError = isMorphChain ? fallbackError : (balanceError && fallbackError);
+    // Error state - for Hedera we only check fallback error, for others we check both
+    const hasRealBalanceError = isHederaChain ? fallbackError : (balanceError && fallbackError);
 
     if (!isConnected) {
         return (

@@ -65,16 +65,16 @@ const LoginForm: React.FC<LoginFormProps> = ({
     mode = 'default'
 }) => {
     const { register, handleSubmit, formState: { errors } } = formMethods;
-    let heading = "Welcome back to GoPay";
+    let heading = "Welcome back to Alentra";
     let subheading = "Login to manage your crypto payroll.";
     if (mode === 'payroll') {
-        heading = "Welcome to GoPay Payroll";
+        heading = "Welcome to Alentra Payroll";
         subheading = "Login to manage your crypto payroll.";
     }
     return (
         <div className="relative w-full max-w-xl mx-auto rounded-2xl bg-gradient-to-br from-black/60 via-black-100/40 to-white/10 dark:from-zinc-900/60 dark:via-zinc-800/40 dark:to-zinc-900/10 backdrop-blur-xl border border-white/30 dark:border-zinc-700/40 shadow-xl p-6 sm:p-10">
             <div className="flex flex-col items-center mb-4">
-                <img src="/GoPay-removebg-preview.png" alt="GoPay Logo" className="h-14 sm:h-20 w-auto mb-2" />
+                <img src="/Alentra_Logo.png" alt="Alentra Logo" className="h-14 sm:h-20 w-auto mb-2" />
                 <h2 className="text-xl sm:text-3xl font-bold text-neutral-800 dark:text-neutral-200">{heading}</h2>
             </div>
             <form className="my-8" onSubmit={handleSubmit(onSubmit)}>
@@ -132,16 +132,16 @@ const RegisterForm: React.FC<RegisterFormProps> = ({
     mode = 'default'
 }) => {
     const { register, handleSubmit, formState: { errors }, watch } = formMethods;
-    let heading = "Create your GoPay Account";
+    let heading = "Create your Alentra Account";
     let subheading = "Join us to simplify your crypto payroll.";
     if (mode === 'payroll') {
-        heading = "Create your GoPay Payroll Account";
+        heading = "Create your Alentra Payroll Account";
         subheading = "Join us to simplify your crypto payroll.";
     }
     return (
         <div className="relative w-full max-w-xl mx-auto rounded-2xl bg-gradient-to-br from-white/60 via-neutral-100/40 to-white/10 dark:from-zinc-900/60 dark:via-zinc-800/40 dark:to-zinc-900/10 backdrop-blur-xl border border-white/30 dark:border-zinc-700/40 shadow-xl p-6 sm:p-10">
             <div className="flex flex-col items-center mb-4">
-                <img src="/GoPay-removebg-preview.png" alt="GoPay Logo" className="h-14 sm:h-20 w-auto mb-2" />
+                <img src="/Alentra_Logo.png" alt="Alentra Logo" className="h-14 sm:h-20 w-auto mb-2" />
                 <h2 className="text-xl sm:text-3xl font-bold text-neutral-800 dark:text-neutral-200">{heading}</h2>
             </div>
             <form className="my-8" onSubmit={handleSubmit(onSubmit)}>
@@ -201,7 +201,7 @@ const ForgotPasswordForm: React.FC<ForgotPasswordFormProps> = ({ formMethods, on
     return (
         <div className="relative w-full max-w-xl mx-auto rounded-2xl bg-gradient-to-br from-white/60 via-neutral-100/40 to-white/10 dark:from-zinc-900/60 dark:via-zinc-800/40 dark:to-zinc-900/10 backdrop-blur-xl border border-white/30 dark:border-zinc-700/40 shadow-xl p-6 sm:p-10">
             <div className="flex flex-col items-center mb-4">
-                <img src="/GoPay-removebg-preview.png" alt="GoPay Logo" className="h-14 sm:h-20 w-auto mb-2" />
+                <img src="/Alentra-removebg-preview.png" alt="Alentra Logo" className="h-14 sm:h-20 w-auto mb-2" />
                 <h2 className="text-xl sm:text-2xl font-bold text-neutral-800 dark:text-neutral-200">Forgot Password</h2>
             </div>
             <form className="my-8" onSubmit={handleSubmit(onSubmit)}>
@@ -240,7 +240,7 @@ const ResetPasswordForm: React.FC<ResetPasswordFormProps> = ({ formMethods, onSu
     return (
         <div className="relative w-full max-w-xl mx-auto rounded-2xl bg-gradient-to-br from-white/60 via-neutral-100/40 to-white/10 dark:from-zinc-900/60 dark:via-zinc-800/40 dark:to-zinc-900/10 backdrop-blur-xl border border-white/30 dark:border-zinc-700/40 shadow-xl p-6 sm:p-10">
             <div className="flex flex-col items-center mb-4">
-                <img src="/GoPay-removebg-preview.png" alt="GoPay Logo" className="h-14 sm:h-20 w-auto mb-2" />
+                <img src="/Alentra-removebg-preview.png" alt="Alentra Logo" className="h-14 sm:h-20 w-auto mb-2" />
                 <h2 className="text-xl sm:text-2xl font-bold text-neutral-800 dark:text-neutral-200">Reset Your Password</h2>
             </div>
             <form className="my-8" onSubmit={handleSubmit(onSubmit)}>

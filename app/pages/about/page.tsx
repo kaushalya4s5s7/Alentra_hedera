@@ -12,9 +12,9 @@ import {
 
 export default function AboutSection() {
     const aboutInfo = {
-        title: "GoPay",
+        title: "Alentra",
         tagline: "Web3 Native Financial Infrastructure",
-        description: "GoPay is your all-in-one financial umbrella, seamlessly blending decentralized and centralized rails into a single, turnkey ecosystem. From on-chain smart-contract payroll, streaming payments, and trustless P2P transfers, to fiat on-ramps/off-ramps, KYC/AML compliance, and AI-powered automation, GoPay empowers businesses and individuals with the full spectrum of Web3-native and traditional finance services—secure, scalable, and future-proof."
+        description: "Alentra is your all-in-one financial umbrella, seamlessly blending decentralized and centralized rails into a single, turnkey ecosystem. From on-chain smart-contract payroll, streaming payments, and trustless P2P transfers, to fiat on-ramps/off-ramps, KYC/AML compliance, and AI-powered automation, Alentra empowers businesses and individuals with the full spectrum of Web3-native and traditional finance services—secure, scalable, and future-proof."
     };
 
     const features = [
@@ -43,7 +43,7 @@ export default function AboutSection() {
                     <h2 className="text-3xl font-bold mb-8 text-center text-neutral-900 dark:text-white">Our Vision</h2>
                     <div className="bg-neutral-50 dark:bg-neutral-900 p-8 rounded-xl shadow-sm">
                         <p className="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
-                            GoPay unifies TradFi and DeFi into one Web3-native financial umbrella, offering a seamless experience for both crypto-native projects and traditional enterprises.
+                            Alentra unifies TradFi and DeFi into one Web3-native financial umbrella, offering a seamless experience for both crypto-native projects and traditional enterprises.
                         </p>
                         <p className="text-lg text-neutral-700 dark:text-neutral-300">
                             Our end-to-end vision is to provide every piece of the financial lifecycle—from on-chain asset acquisition all the way through to fiat settlements—in a single, one-click experience that feels as familiar as your favorite payment app.

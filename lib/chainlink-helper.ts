@@ -132,6 +132,22 @@ const tokenToCoingeckoId: { [key: string]: string } = {
     'WETH': 'weth',
     'WBTC': 'wrapped-bitcoin',
     'EDU': 'edu-coin',
+    'HBAR': 'hedera', // Added HBAR
+
+    
+    // Additional popular tokens you might need:
+    'BTC': 'bitcoin',
+    'ADA': 'cardano',
+    'SOL': 'solana',
+    'DOT': 'polkadot',
+    'LINK': 'chainlink',
+    'UNI': 'uniswap',
+    'BUSD': 'binance-usd',
+    'SHIB': 'shiba-inu',
+    'DOGE': 'dogecoin',
+    'LTC': 'litecoin',
+    'ARB': 'arbitrum',
+    'OP': 'optimism'
 };
 
 // Function to fetch price from CoinGecko API
@@ -143,7 +159,7 @@ async function fetchPriceFromCoinGecko(tokenSymbol: string): Promise<number | nu
             return null;
         }
 
-        const apiUrl = `https://api.coingecko.com/api/v3/simple/price?ids=${coinId}&vs_currencies=usd`;
+        const apiUrl = `https://api.coingecko.com/api/v3/simple/price?ids=${coinId}&vs_currencies=usd&x_cg_demo_api_key=CG-srkX4U9kccQLkZaVDskW8tV6`;
         const response = await fetch(apiUrl, {
             method: 'GET',
             headers: {

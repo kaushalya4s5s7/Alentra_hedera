@@ -1,41 +1,33 @@
 import { getDefaultConfig, Chain } from '@rainbow-me/rainbowkit';
-import { morph } from 'viem/chains';
 
-
-const morphHolesky = {
-  id: 2810,
-  name: "morphHolesky",
-  iconUrl: "https://d2j9klt7rsw34c.cloudfront.net/frontend/cms/logo/6fbf5560-d5ff-48d3-b28d-c3b723030dec.png", // optional
+const hederaTestnet = {
+  id: 296,
+  name: "Hedera Testnet",
+  iconUrl: "https://hedera.com/_nuxt/img/hedera-logo.8b8b6c5.svg", // Optional: Hedera logo
   nativeCurrency: {
-    name: "Ether",
-    symbol: "ETH",
-    decimals: 18
+    name: "HBAR",
+    symbol: "HBAR",
+    decimals: 18 // MetaMask requires 18 decimals, even though HBAR has 8
   },
   rpcUrls: {
     default: {
       http: [
-        "https://rpc-quicknode-holesky.morphl2.io",
-        "https://rpc-holesky.morphl2.io"
+        '/api/hashioProxy'
       ]
     }
   },
   blockExplorers: {
     default: {
-      name: "Morph Holesky Testnet Explorer",
-      url: "https://explorer-holesky.morphl2.io/"
+      name: "HashScan",
+      url: "https://hashscan.io/testnet"
     }
   }
-}as const satisfies Chain;
-
-
-
-
+} as const satisfies Chain;
 
 const config = getDefaultConfig({
-    appName: 'GoPay',
+    appName: 'Alentra',
     projectId: '23c5e43972b3775ee6ed4f74f3e76efb',
-    chains: [morphHolesky],
+    chains: [hederaTestnet],
 });
-
 
 export { config };

@@ -89,7 +89,7 @@ const PaymentSidebar: React.FC<PaymentsSidebarProps> = ({
                     
 <span className={`tracking-wider flex items-center ${open ? '' : 'justify-center px-2'}`}>
             {open ? (
-                <h2 className="text-white font-semibold text-base tracking-wider flex items-center gap-2">Welcome, {user?.company || "GoPay Dashboard"}</h2>
+                <h2 className="text-white font-semibold text-base tracking-wider flex items-center gap-2">Welcome, {user?.company || "Alentra Dashboard"}</h2>
             ) : (
                 <LogoIcon />
             )}
@@ -131,23 +131,23 @@ export const Logo = () => (
         href="#"
         className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal text-black"
     >
-        <img src="/GoPay.png" alt="GoPay Logo" className="h-5 w-6 shrink-0 rounded-tl-lg rounded-tr-sm rounded-br-lg rounded-bl-sm" />
+        <img src="/AlentraBg_Logo.png" alt="Alentra Logo" className="h-5 w-6 shrink-0 rounded-tl-lg rounded-tr-sm rounded-br-lg rounded-bl-sm" />
         <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className="font-medium whitespace-pre text-black dark:text-white"
         >
-            GoPay
+            Alentra
         </motion.span>
     </a>
 );
 
 export const LogoIcon = () => (
     <a
-        href="GoPay.png"
+        href="Alentra.png"
         className="relative z-20 flex items-center justify-center py-1 text-sm font-normal text-black"
     >
-        <img src="/GoPay.png" alt="GoPay Logo" className="h-5 w-6 shrink-0 rounded-tl-lg rounded-tr-sm rounded-br-lg rounded-bl-sm" />
+        <img src="/AlentraBg_Logo.png" alt="Alentra Logo" className="h-5 w-6 shrink-0 rounded-tl-lg rounded-tr-sm rounded-br-lg rounded-bl-sm" />
     </a>
 );
 

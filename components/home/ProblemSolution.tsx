@@ -60,7 +60,7 @@ export default function ProblemSolution() {
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Traditional payroll systems create more problems than they solve. 
-            GoPay eliminates every pain point with intelligent automation.
+            Alentra eliminates every pain point with intelligent automation.
           </p>
         </div>
 
@@ -107,7 +107,7 @@ export default function ProblemSolution() {
               <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
                 <Check className="text-green-500" size={16} />
               </div>
-              <h3 className="text-2xl font-bold text-black">GoPay Solutions</h3>
+              <h3 className="text-2xl font-bold text-black">Alentra Solutions</h3>
             </div>
 
             <div className="space-y-6">

@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 const testimonials = [
   {
-    quote: "GoPay reduced our payroll processing time from 3 days to 30 minutes. The compliance features are incredible.",
+    quote: "Alentra reduced our payroll processing time from 3 days to 30 minutes. The compliance features are incredible.",
     author: "Sarah Chen",
     role: "Head of People Operations",
     company: "TechFlow Inc.",
@@ -15,7 +15,7 @@ const testimonials = [
     metric: "90% time saved"
   },
   {
-    quote: "Managing contractors across 15 countries was a nightmare. GoPay made it seamless and stress-free.",
+    quote: "Managing contractors across 15 countries was a nightmare. Alentra made it seamless and stress-free.",
     author: "Marcus Rodriguez",
     role: "Finance Director",
     company: "Global Dynamics",
@@ -33,7 +33,7 @@ const testimonials = [
     metric: "$50K saved annually"
   },
   {
-    quote: "Our remote team loves getting paid instantly. GoPay's transparency builds trust with our employees.",
+    quote: "Our remote team loves getting paid instantly. Alentra's transparency builds trust with our employees.",
     author: "David Park",
     role: "Operations Manager",
     company: "Innovation Labs",
@@ -73,7 +73,7 @@ export default function Testimonials() {
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Don't just take our word for it. See what our customers say about transforming 
-            their payroll operations with GoPay.
+            their payroll operations with Alentra.
           </p>
         </div>
 

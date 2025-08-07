@@ -1,88 +1,67 @@
-import Image from 'next/image';
+import React from 'react';
 
-export default function LogoCarousel() {
-  // Company logos with proper logo URLs
-  const logos = [
-    { 
-      name: "Shopify", 
-      logo: "https://cdn.worldvectorlogo.com/logos/shopify.svg",
-      alt: "Shopify logo"
-    },
-    { 
-      name: "Stripe", 
-      logo: "https://cdn.worldvectorlogo.com/logos/stripe-4.svg",
-      alt: "Stripe logo"
-    },
-    { 
-      name: "Slack", 
-      logo: "https://cdn.worldvectorlogo.com/logos/slack-new-logo.svg",
-      alt: "Slack logo"
-    },
-    { 
-      name: "Zoom", 
-      logo: "https://cdn.worldvectorlogo.com/logos/zoom-communications-logo.svg",
-      alt: "Zoom logo"
-    },
-   
-    { 
-      name: "Discord", 
-      logo: "https://cdn.worldvectorlogo.com/logos/discord-6.svg",
-      alt: "Discord logo"
-    },
-    { 
-      name: "GitHub", 
-      logo: "https://cdn.worldvectorlogo.com/logos/github-icon-1.svg",
-      alt: "GitHub logo"
-    },
-    { 
-      name: "Linear", 
-      logo: "https://cdn.worldvectorlogo.com/logos/linear-1.svg",
-      alt: "Linear logo"
-    },
+interface Company {
+  name: string;
+  logo: string;
+}
+
+export default function LogoCarousel(): React.JSX.Element {
+  const logos: Company[] = [
+    { name: "TechCorp", logo: "TC" },
+    { name: "GlobalSoft", logo: "GS" },
+    { name: "InnovateAI", logo: "IA" },
+    { name: "DataFlow", logo: "DF" },
+    { name: "CloudVentures", logo: "CV" },
+    { name: "NextGen", logo: "NG" },
+    { name: "SmartSystems", logo: "SS" },
+    { name: "FutureWorks", logo: "FW" }
   ];
 
-  // Duplicate logos for seamless infinite scroll
-  const duplicatedLogos = [...logos, ...logos];
-
   return (
-    <section className="py-16 bg-gray-50 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section className="py-16 bg-white border-b border-gray-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <p className="text-lg font-semibold text-gray-600 mb-2">Trusted by 200+ global businesses</p>
-          <h3 className="text-3xl font-bold text-black">
-            Join industry leaders who choose GoPay
-          </h3>
+          <p className="text-sm text-gray-500 font-medium uppercase tracking-wider">
+            Trusted by leading companies worldwide
+          </p>
         </div>
 
-        {/* Infinite scroll container */}
-        <div className="relative">
-          <div className="flex space-x-8 animate-scroll">
-            {duplicatedLogos.map((company, index) => (
-              <div 
+        <div className="overflow-hidden">
+          <div
+            className="flex space-x-12 md:space-x-16"
+            style={{ animation: 'scroll 30s linear infinite' }}
+          >
+            {[...logos, ...logos].map((company, index) => (
+              <div
                 key={index}
-                className="flex-none w-40 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300"
+                className="flex-shrink-0 flex items-center justify-center group"
               >
-                <div className="bg-white rounded-lg p-4 shadow-sm border w-full h-full flex items-center justify-center space-x-3">
-                  <div className="relative w-8 h-8 flex-shrink-0">
-                    <Image
-                      src={company.logo}
-                      alt={company.alt}
-                      width={32}
-                      height={32}
-                      className="object-contain"
-                    />
+                <div className="flex items-center space-x-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center group-hover:from-blue-50 group-hover:to-teal-50 transition-all duration-300">
+                    <span className="text-sm font-semibold text-gray-600 group-hover:text-blue-600">
+                      {company.logo}
+                    </span>
                   </div>
-                  <span className="text-sm font-semibold text-gray-800 truncate">{company.name}</span>
+                  <span className="text-lg font-semibold text-gray-400 group-hover:text-gray-600 transition-colors duration-300">
+                    {company.name}
+                  </span>
                 </div>
               </div>
             ))}
           </div>
-          
-          {/* Gradient overlays */}
-          <div className="absolute left-0 top-0 w-40 h-full bg-gradient-to-r from-gray-50 to-transparent z-10"></div>
-          <div className="absolute right-0 top-0 w-40 h-full bg-gradient-to-l from-gray-50 to-transparent z-10"></div>
         </div>
       </div>
+
+      <style>{`
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
     </section>
   );
 }
