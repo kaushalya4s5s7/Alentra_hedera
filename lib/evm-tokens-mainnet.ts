@@ -24,8 +24,17 @@ export const tokensPerMainnetChain: { [chainId: number]: Token[] } = {
             symbol: 'HBAR',
             address: '0x0000000000000000000000000000000000000000', // Native HBAR
             decimals: 18, // MetaMask requires 18 decimals, even though HBAR has 8
-            priceFeed: ''
+            // Note: HBAR price feeds on Hedera EVM might not be available via Chainlink
+            // Will fallback to CoinGecko API which is more reliable for HBAR
+            priceFeed: undefined // No Chainlink price feed available, will use CoinGecko
+        },
+        // You can add wrapped HBAR or other Hedera-based tokens here if needed
+        {
+            symbol: 'WHBAR',
+            address: '0xb1F616b8134F602c3Bb465fB5b5e6565cCAd37Ed', 
+            decimals: 18,
+            priceFeed: undefined // Same as HBAR, use CoinGecko
         }
-        // No other token addresses are available in the knowledge sources
+        // Add other Hedera testnet tokens as needed
     ]
 };
