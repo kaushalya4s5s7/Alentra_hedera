@@ -132,9 +132,9 @@ const tokenToCoingeckoId: { [key: string]: string } = {
     'WETH': 'weth',
     'WBTC': 'wrapped-bitcoin',
     'EDU': 'edu-coin',
-    'HBAR': 'hedera', // Added HBAR
+    'HBAR': 'hedera-hashgraph', // Added HBAR
+    'WHBAR': 'wrapped-hbar',    // Added WHBAR
 
-    
     // Additional popular tokens you might need:
     'BTC': 'bitcoin',
     'ADA': 'cardano',
@@ -202,6 +202,17 @@ export async function getExchangeRate(
             return 1;
         }
 
+        // For HBAR, skip Chainlink and go directly to CoinGecko since it's more reliable
+        if (tokenSymbol === 'HBAR' || tokenSymbol === 'WHBAR') {
+            console.log(`Using CoinGecko for ${tokenSymbol} (Hedera native token)`);
+            const coingeckoRate = await fetchPriceFromCoinGecko('HBAR'); // Use HBAR for both HBAR and WHBAR
+            if (coingeckoRate !== null && coingeckoRate > 0) {
+                return coingeckoRate;
+            }
+            // If CoinGecko fails, use fallback
+            return 10; // 1 USD ≈ 10 HBAR (approximate)
+        }
+
         // First attempt: Try using Chainlink price feed
         try {
             // Find the specific token and its price feed for this specific chain
@@ -257,12 +268,14 @@ export async function getExchangeRate(
 
         // For other tokens, return reasonable fallback based on symbol
         const fallbackRates: { [key: string]: number } = {
-            'ETH': 0.001,    // 1 USD ≈ 0.0005 ETH
-            'BNB': 0.001,     // 1 USD ≈ 0.003 BNB
-            'tBNB': 0.001,    // Testnet BNB same as BNB
+            'ETH': 0.001,       // 1 USD ≈ 0.0005 ETH
+            'BNB': 0.001,       // 1 USD ≈ 0.003 BNB
+            'tBNB': 0.001,      // Testnet BNB same as BNB
             'MATIC': 0.001,     // 1 USD ≈ 0.8 MATIC
-            'AVAX': 0.001,     // 1 USD ≈ 0.04 AVAX
+            'AVAX': 0.001,      // 1 USD ≈ 0.04 AVAX
             'EDU': 0.001,       // 1 USD ≈ 1.5 EDU (example)
+            'HBAR': 10,         // 1 USD ≈ 10 HBAR (approximate fallback)
+            'WHBAR': 10,        // Same as HBAR
             'ZOLLPTT': 1
         };
 
@@ -276,12 +289,14 @@ export async function getExchangeRate(
         }
 
         const emergencyFallbackRates: { [key: string]: number } = {
-            'ETH': 0.001,    // 1 USD ≈ 0.0005 ETH
-            'BNB': 0.001,     // 1 USD ≈ 0.003 BNB
-            'tBNB': 0.001,    // Testnet BNB same as BNB
+            'ETH': 0.001,       // 1 USD ≈ 0.0005 ETH
+            'BNB': 0.001,       // 1 USD ≈ 0.003 BNB
+            'tBNB': 0.001,      // Testnet BNB same as BNB
             'MATIC': 0.001,     // 1 USD ≈ 0.8 MATIC
-            'AVAX': 0.001,     // 1 USD ≈ 0.04 AVAX
+            'AVAX': 0.001,      // 1 USD ≈ 0.04 AVAX
             'EDU': 0.001,       // 1 USD ≈ 1.5 EDU (example)
+            'HBAR': 10,         // 1 USD ≈ 10 HBAR (emergency fallback)
+            'WHBAR': 10,        // Same as HBAR
             'ZOLLPTT': 1
         };
 
