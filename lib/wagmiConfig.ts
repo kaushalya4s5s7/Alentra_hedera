@@ -3,7 +3,7 @@ import { getDefaultConfig, Chain } from '@rainbow-me/rainbowkit';
 const hederaTestnet = {
   id: 296,
   name: "Hedera Testnet",
-  iconUrl: "https://hedera.com/_nuxt/img/hedera-logo.8b8b6c5.svg", // Optional: Hedera logo
+  iconUrl: "https://avatars.githubusercontent.com/u/31002956?s=200&v=4", // Optional: Hedera logo
   nativeCurrency: {
     name: "HBAR",
     symbol: "HBAR",
