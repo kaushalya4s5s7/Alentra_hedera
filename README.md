@@ -69,8 +69,8 @@ Built on a modular architecture, Alentra supports multiple blockchain networks w
 |---------|-----------|-------------|
 | Q1 2025 | **Mainnet Launch & Security** | Production deployment, security audits, insurance coverage |
 | Q2 2025 | **Multi-Chain Expansion** | Ethereum, Polygon, Avalanche integration, cross-chain routing |
-| Q3 2025 | **Enterprise Features** | Advanced compliance tools, white-label solutions, API marketplace |
-| Q4 2025 | **Global Scaling** | 50+ new countries, institutional partnerships, DeFi integrations |
+| Q3 2026 | **Enterprise Features** | Advanced compliance tools, white-label solutions, API marketplace |
+| Q4 2026 | **Global Scaling** | 50+ new countries, institutional partnerships, DeFi integrations |
 
 ## Why Alentra?
 
@@ -111,13 +111,13 @@ Expert in React/Next.js, TypeScript, and blockchain development with extensive e
 
 ## Links & Contact
 
-🌐 **Website**: [Coming Soon - alentra.io]  
+🌐 **Website**: [\[Alentra\] ](https://alentra-hedera.vercel.app/) 
 📂 **GitHub**: https://github.com/kaushalya4s5s7/PayZoll_BASE  
-📧 **Email**: kaushalya4s5s7@gmail.com  
+📧 **Email**: chaudharikaushal02@gmail.com
 🔗 **Socials**: 
 - Twitter: [@AlentractProtocol]
-- Discord: [Alentra Community]
-- LinkedIn: [Alentra Official]
+- Discord: kaushal2866
+- LinkedIn: [\[KC Official\]](https://www.linkedin.com/in/kaushal-chaudhari-21b83a1b0/)
 
 ---
 
