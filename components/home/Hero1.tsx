@@ -312,7 +312,7 @@ export default function Hero() {
             <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight mb-4 text-shadow-soft">
               <span className="text-slate-900">Decentralised</span>
               <br />
-              <span className="shimmer-text">Payroll Protocol</span>
+              <span className="shimmer-text">P2P & Payroll Protocol</span>
               <br />
              
             </h1>
