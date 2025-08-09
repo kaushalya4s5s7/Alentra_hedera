@@ -200,7 +200,7 @@ export default function Navbar() {
             <div className="flex items-center">
               <div className="flex items-center space-x-3" style={{ position: 'relative', zIndex: 2 }}>
                 <Image 
-                  src="/Alentra_Logo.png" 
+                  src="/Alentra_without_bg.png" 
                   alt="Alentra Logo" 
                   width={32} 
                   height={32}

@@ -131,7 +131,7 @@ export const Logo = () => (
         href="#"
         className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal text-black"
     >
-        <img src="/AlentraBg_Logo.png" alt="Alentra Logo" className="h-5 w-6 shrink-0 rounded-tl-lg rounded-tr-sm rounded-br-lg rounded-bl-sm" />
+        <img src="/Alentra_without_bg.png" alt="Alentra Logo" className="h-5 w-6 shrink-0 rounded-tl-lg rounded-tr-sm rounded-br-lg rounded-bl-sm" />
         <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -147,7 +147,7 @@ export const LogoIcon = () => (
         href="Alentra.png"
         className="relative z-20 flex items-center justify-center py-1 text-sm font-normal text-black"
     >
-        <img src="/AlentraBg_Logo.png" alt="Alentra Logo" className="h-5 w-6 shrink-0 rounded-tl-lg rounded-tr-sm rounded-br-lg rounded-bl-sm" />
+        <img src="/Alentra_without_bg.png" alt="Alentra Logo" className="h-5 w-6 shrink-0 rounded-tl-lg rounded-tr-sm rounded-br-lg rounded-bl-sm" />
     </a>
 );
 

@@ -1,5 +1,5 @@
 import { ethers } from 'ethers';
-import { tokensPerMainnetChain as tokens } from '@/lib/evm-tokens-mainnet';
+import { tokensPerMainnetChain as tokens } from './evm-tokens-mainnet-tfs';
 
 // Chainlink Price Feed ABI (minimal version with just what we need)
 export const chainlinkAggregatorABI = [

@@ -3,7 +3,7 @@ async function main() {
     const [deployer] = await ethers.getSigners();
     console.log("Deploying contracts with the account:", deployer.address);
 
-    const blp = await ethers.getContractFactory("SecureTransfer");
+    const blp = await ethers.getContractFactory("BulkPayroll");
     const bp = await blp.deploy(/* constructor args */);
 
     // For newer ethers versions (v6+)

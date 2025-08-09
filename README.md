@@ -56,10 +56,10 @@ Built on a modular architecture, Alentra supports multiple blockchain networks w
 ## Accomplishments
 
 🚀 **Deployments** – Live on Hedera Testnet (Chain ID 296) with EVM compatibility
+    **Contract Addresses:**
 
-🏆 **Awards** – [Add hackathon wins and recognitions here]
-
-🎓 **Programs** – [Add incubation/acceleration program participation]
+    - **Payroll Contract**: `0x6132B4447D01CD79B5a9D65d7A37Aabcfc8EFC1d`
+    - **SecureTransfer Contract**: `0xe7F03Fd0a14c38831dEcA1DE68D7C5D057083bE1`
 
 🔄 **Transactions** – Successfully processed test transactions with sub-second confirmations
 
@@ -112,7 +112,7 @@ Expert in React/Next.js, TypeScript, and blockchain development with extensive e
 ## Links & Contact
 
 🌐 **Website**: [\[Alentra\] ](https://alentra-hedera.vercel.app/) 
-📂 **GitHub**: https://github.com/kaushalya4s5s7/PayZoll_BASE  
+📂 **GitHub**: https://github.com/kaushalya4s5s7/Alentra_Hedera  
 📧 **Email**: chaudharikaushal02@gmail.com
 🔗 **Socials**: 
 - Twitter: [@AlentractProtocol]
