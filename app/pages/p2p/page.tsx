@@ -43,7 +43,7 @@ function Page() {
             </div>
             <div className="flex flex-col max-w-screen max-h-screen items-center m-10">
                 <div className="w-full flex justify-between items-center mb-6">
-                    <h1 className="text-2xl font-bold">PayZoll P2P Payments</h1>
+                    <h1 className="text-2xl font-bold">Alentra P2P Payments</h1>
                     <ConnectButton />
                 </div>
 

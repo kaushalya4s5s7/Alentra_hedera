@@ -7,7 +7,7 @@ export const NATIVE_ADDRESS = '0x0000000000000000000000000000000000000000';
 
 // Example contract address for Hedera Testnet (replace with your actual contract address if you have one)
 export const contractMainnetAddresses = {
-    [hederaTestnet.id]: '0x0000000000000000000000000000000000000000', // Placeholder, as no contract address is provided in the sources
+    [hederaTestnet.id]: '0xd489751254123d74EB91c86CD3B2145Fe878234a', // Placeholder, as no contract address is provided in the sources
 };
 
 // Token interface with optional priceFeed field

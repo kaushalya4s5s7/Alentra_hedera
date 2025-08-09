@@ -63,7 +63,7 @@ const P2PHeader: React.FC<PaymentsHeaderProps> = ({
                 {/* Left Side: Title and Description */}
                 <div className="w-full md:w-auto">
                     <h1 className="text-lg sm:text-2xl md:text-3xl lg:text font-bold text-black dark:text-white">
-                        {user?.company || "PayZoll Dashboard"}
+                        {user?.company || "Alentra Dashboard"}
                     </h1>
                     <h3 className="text-md sm:text-lg md:text-xl text-black dark:text-white">
                         {user?.email || "Email"}

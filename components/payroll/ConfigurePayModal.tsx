@@ -7,7 +7,7 @@ import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useAccount, usePublicClient } from 'wagmi';
 import TokenSelector from './TokenSelector';
 import { allMainnetChains as chains } from '@/lib/evm-chains-mainnet';
-import { tokensPerMainnetChain as tokens, Token } from '@/lib/evm-tokens-mainnet';
+import {tokensPerMainnetChain as tokens, Token }from '@/lib/evm-tokens-mainnet-tfs';
 import { getExchangeRate } from '@/lib/chainlink-helper';
 import { ethers } from 'ethers';
 

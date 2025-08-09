@@ -97,7 +97,7 @@ const ServiceModal: React.FC<ServiceModalProps> = ({ isOpen, onClose }) => {
                             {/* Modal Header */}
                             <div className="text-center pr-8">
                                 <h2 className={`text-2xl md:text-3xl font-bold text-neutral-50 mb-2 ${MONTSERRAT.className}`}>
-                                    <span className="text-blue-400">PayZoll</span> Services
+                                    <span className="text-blue-400">Alentra</span> Services
                                 </h2>
                                 <p className="text-neutral-400 max-w-xl mx-auto text-sm">
                                     Enterprise-grade financial solutions for modern businesses
