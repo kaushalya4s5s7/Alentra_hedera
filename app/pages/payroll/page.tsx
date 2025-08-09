@@ -62,18 +62,18 @@ const PaymentsPage: React.FC = () => {
     const { isLoading: isTxLoading, isSuccess: isTxSuccess, isError: isTxErrorStatus } =
         useWaitForTransactionReceipt({ hash: wagmiTxHash });
 
-    // State for Hedera chain transaction hash
-    const [HederaTxHash, setHederaTxHash] = useState<`0x${string}` | undefined>(undefined);
+    // State for Morph chain transaction hash
+    const [MorphTxHash, setMorphTxHash] = useState<`0x${string}` | undefined>(undefined);
 
 
     useEffect(() => {
         if (wagmiTxHash) {
             setTxHash(wagmiTxHash as `0x${string}`);
-        } else if (HederaTxHash) {
-            setTxHash(HederaTxHash);
+        } else if (MorphTxHash) {
+            setTxHash(MorphTxHash);
         }
 
-    }, [wagmiTxHash, HederaTxHash]);
+    }, [wagmiTxHash, MorphTxHash]);
 
     // Derived loading state
     const isLoadingDerived = isApproving || isSending || isWritePending || isTxLoading;
@@ -99,7 +99,7 @@ const PaymentsPage: React.FC = () => {
                 !!address &&
                 selectedToken?.address !== NATIVE_ADDRESS &&
                 !!getTransferContract() &&
-                selectedChain?.id !== 296 // Disable for Hedera chain
+                selectedChain?.id !== 296 // Disable for Morph chain
         }
     });
 
@@ -109,7 +109,7 @@ const PaymentsPage: React.FC = () => {
     // Override refetchAllowance to work with both methods
     const refetchAllowance = async () => {
         if (selectedChain?.id === 296) {
-            // For Hedera, manually trigger the ethers effect logic
+            // For Morph, manually trigger the ethers effect logic
             if (
                 isConnected &&
                 selectedToken?.address !== NATIVE_ADDRESS &&
@@ -205,7 +205,7 @@ const PaymentsPage: React.FC = () => {
                                 setShowPaymentStatus(false);
                                 setApprovalTxHash(undefined);
                                 setTxError('');
-                                setHederaTxHash(undefined);
+                                setMorphTxHash(undefined);
                             }, 5000);
                         }, 2000);
                         return;
@@ -216,7 +216,7 @@ const PaymentsPage: React.FC = () => {
                     }
                     setTimeout(checkEthersTxStatus, 3000);
                 } catch (error) {
-                    console.error("Error checking Hedera transaction:", error);
+                    console.error("Error checking Morph transaction:", error);
                 }
             };
             checkEthersTxStatus();
@@ -273,6 +273,10 @@ const PaymentsPage: React.FC = () => {
             recipients: selectedEmployeeData.map(emp => emp.wallet as `0x${string}`),
             amounts: selectedEmployeeData.map(emp => {
                 const tokenAmount = usdToToken(emp.salary);
+                // For Hedera testnet (chain 296), we need amounts in tinybars (8 decimals)
+                if (selectedChain?.id === 296 && selectedToken.address === NATIVE_ADDRESS) {
+                    return parseUnits(tokenAmount, 8); // HBAR tinybars conversion
+                }
                 return parseUnits(tokenAmount, selectedToken.decimals);
             })
         };
@@ -417,7 +421,7 @@ const PaymentsPage: React.FC = () => {
             if (response.status === "success") {
                 toast.success("Payroll record saved successfully");
                 setTxHash(undefined);
-                setHederaTxHash(undefined);
+                setMorphTxHash(undefined);
                 setApprovalTxHash(undefined);
             } else {
                 toast.error("Failed to save payroll record");
@@ -448,7 +452,7 @@ const PaymentsPage: React.FC = () => {
             const totalAmount = amounts.reduce((sum, amount) => sum + amount, BigInt(0));
 
             if (selectedChain?.id === 296) {
-                // Hedera chain logic (ethers.js)
+                // Morph chain logic (ethers.js)
                 try {
                     const provider = new ethers.BrowserProvider(window.ethereum);
                     const signer = await provider.getSigner();
@@ -474,11 +478,19 @@ const PaymentsPage: React.FC = () => {
                     setIsSending(true);
                     try {
                         const tx = selectedToken.address === NATIVE_ADDRESS
-                            ? await contract.bulkTransfer(NATIVE_ADDRESS, recipients, amounts, { value: totalAmount, gasLimit: 400000 })
-                            : await contract.bulkTransfer(selectedToken.address as `0x${string}`, recipients, amounts, { gasLimit: 400000 });
+                            ? await contract.bulkTransfer(NATIVE_ADDRESS, recipients, amounts, { 
+                                value: parseUnits((calculateTotalAmount() * exchangeRate).toFixed(6), 18), // HBAR in wei (18 decimals)
+                                gasLimit: 3000000 
+                              })
+                            : await contract.bulkTransfer(
+                                selectedToken.address as `0x${string}`,
+                                recipients,
+                                amounts,
+                                { gasLimit: 3000000 }
+                            );
                         
                         const finalTxHash = tx.hash as `0x${string}`;
-                        setHederaTxHash(finalTxHash);
+                        setMorphTxHash(finalTxHash);
                         setTxHash(finalTxHash);
                         await logPayrollTransaction(finalTxHash);
                     } catch (error: any) {
@@ -651,7 +663,7 @@ const PaymentsPage: React.FC = () => {
                         setShowPaymentStatus(false);
                         setApprovalTxHash(undefined);
                         setTxError('');
-                        setHederaTxHash(undefined);
+                        setMorphTxHash(undefined);
                         setTxHash(undefined);
                         setSelectedEmployees([]);
                     }}
