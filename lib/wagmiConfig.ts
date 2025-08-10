@@ -3,16 +3,16 @@ import { getDefaultConfig, Chain } from '@rainbow-me/rainbowkit';
 const hederaTestnet = {
   id: 296,
   name: "Hedera Testnet",
-  iconUrl: "https://avatars.githubusercontent.com/u/31002956?s=200&v=4", // Optional: Hedera logo
+  iconUrl: "https://avatars.githubusercontent.com/u/31002956?s=200&v=4",
   nativeCurrency: {
     name: "HBAR",
     symbol: "HBAR",
-    decimals: 18 // MetaMask requires 18 decimals, even though HBAR has 8
+    decimals: 18
   },
   rpcUrls: {
     default: {
       http: [
-        '/api/hashioProxy'
+        process.env.NEXT_PUBLIC_HEDERA_RPC_URL || '/api/hashioProxy'
       ]
     }
   },
